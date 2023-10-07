@@ -1,4 +1,4 @@
-﻿using Fuzztastic.Specification;
+﻿using Fuzztastic.Specifications;
 
 namespace Fuzztastic.Expermintal
 {
@@ -13,6 +13,7 @@ namespace Fuzztastic.Expermintal
             
             OpenAPI = new OpenAPI(specificationLocation, 3);
         }
+
         public string GetSpecification() =>
             OpenAPI.ToString();
     }
