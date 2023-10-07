@@ -8,11 +8,12 @@ namespace Fuzztastic.Workers.Workload
 {
     public class Workload
     {
-        public int? Id { get; set; }
-        public string? Server { get; set; }
-        public string? HttpMethod { get; set; }
-        public string? Endpoint { get; set; }
-        public string? OperationId { get; set; }
+        private int? Id { get; set; }
+        private string? Server { get; set; }
+        private string? HttpMethod { get; set; }
+        private string? Endpoint { get; set; }
+        private string? OperationId { get; set; }
+        private string? BodyPayload { get; set; }
 
 
         public static Workload Request()
@@ -47,6 +48,12 @@ namespace Fuzztastic.Workers.Workload
         public Workload WithOperationId(string operationId)
         {
             OperationId = operationId;
+            return this;
+        }
+
+        public Workload WithBody(string body)
+        {
+            BodyPayload = body;
             return this;
         }
     }

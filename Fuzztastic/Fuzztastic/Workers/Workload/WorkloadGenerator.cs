@@ -9,6 +9,8 @@ namespace Fuzztastic.Workers.Workload
         public static void Generate(OpenApiDocument specification)
         {
 
+            List<Workload> workloads = new List<Workload>();
+
             foreach (var path in specification.Paths){
                 var operations = path.Value.Operations;
 
@@ -18,14 +20,18 @@ namespace Fuzztastic.Workers.Workload
 
                     if(operation != null)
                     {
+                        Workload workload = Workload.Request();
+
                         if (operation.RequestBody != null)
                         {
-                            // request body
+                            workload.WithBody(operation.RequestBody.Content.Keys.FirstOrDefault()!);
                         }
 
                         foreach (var server in operation.Servers)
                         {
-                            // servers
+                            workloads.Add(
+                                workload.WithServer(server.Url).WithEndpoint(path.Key)
+                            );
                         }
                     }
                 }
