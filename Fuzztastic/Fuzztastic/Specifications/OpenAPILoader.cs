@@ -6,19 +6,19 @@ using System.IO;
 
 namespace Fuzztastic.Specifications
 {
-    public class Loader
+    public class OpenAPILoader
     {
         private string Location { get; set; }
         private int Version { get; set; }
         private OpenApiDocument OpenApiDocument { get; set; }
 
-        public Loader(string location, int version)
+        public OpenAPILoader(string location, int version)
         {
             (Location, Version, OpenApiDocument) = (location, version, GetDocument(GetFileAsStream()));
         }
 
-        public static Loader Instance(string location, int version) =>
-            new Loader(location, version);
+        public static OpenAPILoader Instance(string location, int version) =>
+            new OpenAPILoader(location, version);
 
         public OpenApiDocument GetSpecification() =>
             OpenApiDocument;
