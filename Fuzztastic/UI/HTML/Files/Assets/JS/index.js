@@ -8,15 +8,15 @@
 	var scene	= new THREE.Scene();
 	var camera	= new THREE.PerspectiveCamera(25, window.innerWidth /    window.innerHeight, 0.01, 1000);
 	camera.position.z = 15; 
-  camera.position.y = 2;
-  scene.fog = new THREE.Fog(0x000, 0, 45);
+    camera.position.y = 2;
+    scene.fog = new THREE.Fog(0x052159, 0, 14);
 	;(function(){
-		var light	= new THREE.AmbientLight( 0x202020 )
+		var light	= new THREE.AmbientLight(0x202020);
 		scene.add( light )
-		var light	= new THREE.DirectionalLight('white', 5)
+		var light	= new THREE.DirectionalLight('white', 5);
 		light.position.set(0.5, 0.0, 2)
 		scene.add( light )
-		var light	= new THREE.DirectionalLight('white', 0.75*2)
+		var light	= new THREE.DirectionalLight('white', 0.75*2);
 		light.position.set(-0.5, -0.5, -2)
 		scene.add( light )		
 	})()
