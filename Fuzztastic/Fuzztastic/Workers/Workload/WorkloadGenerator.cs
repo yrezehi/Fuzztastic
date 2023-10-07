@@ -14,14 +14,16 @@ namespace Fuzztastic.Workers.Workload
 
                 foreach (var httpMethod in operations)
                 {
-                    operations.TryGetValue(httpMethod.Key, out OpenApiOperation? value);
+                    operations.TryGetValue(httpMethod.Key, out OpenApiOperation? operation);
 
-                    if(value != null && value.Parameters.Count > 0)
+                    if(operation != null && operation.RequestBody != null)
                     {
-                        foreach (var parameter in value.Parameters)
-                        {
+                        // request body
+                    }
 
-                        }
+                    foreach (var server in operation.Servers)
+                    {
+                        // servers
                     }
                 }
             }
