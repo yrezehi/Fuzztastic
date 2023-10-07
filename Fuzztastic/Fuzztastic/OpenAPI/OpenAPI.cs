@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fuzztastic.OpenAPI
+﻿namespace Fuzztastic.OpenAPI
 {
     public class OpenAPI
     {
@@ -13,7 +7,21 @@ namespace Fuzztastic.OpenAPI
         // Working on the fetching via network later!
         private bool IsViaNetwork { get; set; } = false;
 
-        public OpenAPI(string location, int version) =>
+        public OpenAPI(string location, int version)
+        {
+            if (IsValidFileLocation(location))
+                throw new ArgumentException("OpenAPI file was not found!");
+
+            if (!IsHandledVersion(version))
+                throw new ArgumentException("Invalid OpenAPI version!");
+
             (Location, Version) = (location, version);
+        }
+
+        private static bool IsHandledVersion(int version) =>
+            new int[] { 2, 3 }.Contains(version);
+
+        private static bool IsValidFileLocation(string fileLocation) =>
+            File.Exists(fileLocation);
     }
 }
