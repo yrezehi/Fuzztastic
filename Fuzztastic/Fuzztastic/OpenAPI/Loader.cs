@@ -1,29 +1,27 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
+using Microsoft.OpenApi.Extensions;
+using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Fuzztastic.OpenAPI
 {
     public class Loader
     {
         private string Location { get; set; }
+        private int Version { get; set; }
 
-        public Loader(string location) => 
-            Location = location;
+        public Loader(string location, int version) => 
+            (Location, Version) = (location, version);
 
-        public static Loader Instance(string location, int version)
-        {
-            return new Loader(location);
-        }
+        public static Loader Instance(string location, int version) =>
+            new Loader(location, version);
 
-        public string Load()
-        {
-            var openApiDocument = new OpenApiStreamReader().Read(stream, out var diagnostic);
-        }
+        public string Load() =>
+            this.ReadV2(GetFileAsStream());
+
+        private Stream GetFileAsStream() =>
+            new FileStream(Location, FileMode.Open);
+
+        private string ReadV2(Stream stream) =>
+            new OpenApiStreamReader().Read(stream, out _).Serialize(OpenApiSpecVersion.OpenApi2_0, OpenApiFormat.Json);
     }
 }
