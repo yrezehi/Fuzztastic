@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Entery.IO;
 using Sharprompt;
 
 Console.WriteLine(@"
@@ -20,3 +21,9 @@ if (isNewComer.Equals("Yes!"))
     ");
 }
 
+var openAPILocation = Prompt.Input<string>("Enter OpenAPI file location:");
+
+if (!OpenAPI.Exists(openAPILocation))
+{
+    Console.WriteLine($"Open couldn't be found at location: {openAPILocation}");
+}
