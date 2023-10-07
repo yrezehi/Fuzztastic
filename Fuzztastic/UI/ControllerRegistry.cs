@@ -1,5 +1,4 @@
-﻿
-using UI.HTML;
+﻿using UI.HTML;
 
 namespace UI
 {
