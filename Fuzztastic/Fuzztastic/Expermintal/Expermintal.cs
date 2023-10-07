@@ -1,4 +1,5 @@
 ﻿using Fuzztastic.Specifications;
+using Microsoft.OpenApi.Models;
 
 namespace Fuzztastic.Expermintal
 {
@@ -16,5 +17,8 @@ namespace Fuzztastic.Expermintal
 
         public string GetSpecification() =>
             OpenAPI.ToString();
+
+        public OpenApiDocument GetDocument() =>
+            OpenAPI.GetSpecification();
     }
 }

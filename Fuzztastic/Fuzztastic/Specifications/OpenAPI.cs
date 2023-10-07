@@ -31,6 +31,10 @@ namespace Fuzztastic.Specifications
         private static bool IsValidFileLocation(string fileLocation) =>
             new FileInfo(fileLocation).Exists;
 
+        public OpenApiDocument GetSpecification() =>
+            Specification;
+
+
         public override string ToString() =>
             OpenAPILoader.Instance(Location, Version).Load();
     }

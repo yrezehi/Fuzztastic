@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Entery.IO;
 using Fuzztastic.Expermintal;
+using Fuzztastic.Workers.Workload;
 using Sharprompt;
 
 Console.WriteLine(@"
@@ -12,6 +13,10 @@ Console.WriteLine(@"
        \ \_\ \ \____/ /\____\ /\____\\ \__\ \__/.\_\/\____/ \ \__\\ \_\ \____\
         \/_/  \/___/  \/____/ \/____/ \/__/\/__/\/_/\/___/   \/__/ \/_/\/____/
 ");
+
+WorkloadGenerator.Generate(new Expermintal().GetDocument());
+
+Console.WriteLine("\nBye!");
 
 var isNewComer = Prompt.Select("Are you new to Fuzztastic?", new[] { "Yes!", "No!" });
 

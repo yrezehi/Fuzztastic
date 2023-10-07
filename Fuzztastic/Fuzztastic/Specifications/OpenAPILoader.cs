@@ -14,7 +14,7 @@ namespace Fuzztastic.Specifications
 
         public OpenAPILoader(string location, int version)
         {
-            (Location, Version, OpenApiDocument) = (location, version, GetDocument(GetFileAsStream()));
+            (Location, Version, OpenApiDocument) = (location, version, GetDocument(GetFileAsStream(location)));
         }
 
         public static OpenAPILoader Instance(string location, int version) =>
@@ -26,8 +26,8 @@ namespace Fuzztastic.Specifications
         public string Load() =>
             GetAsV2();
 
-        private Stream GetFileAsStream() =>
-            new FileStream(Location, FileMode.Open);
+        private Stream GetFileAsStream(string location) =>
+            new FileStream(location, FileMode.Open);
 
         private OpenApiDocument GetDocument(Stream stream) =>
             new OpenApiStreamReader().Read(stream, out _);
