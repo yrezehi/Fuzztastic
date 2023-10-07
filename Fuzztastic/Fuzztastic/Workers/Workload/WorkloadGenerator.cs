@@ -6,9 +6,8 @@ namespace Fuzztastic.Workers.Workload
     {
         public WorkloadGenerator() { }
 
-        public static void Generate(OpenApiDocument specification)
+        public static List<Workload> Generate(OpenApiDocument specification)
         {
-
             List<Workload> workloads = new List<Workload>();
 
             foreach (var path in specification.Paths){
@@ -37,6 +36,7 @@ namespace Fuzztastic.Workers.Workload
                 }
             }
 
+            return workloads;
         }
     }
 }
