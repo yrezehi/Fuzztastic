@@ -25,3 +25,7 @@ canvas {
 
     position: absolute;
 }
+
+div[data-type="header-content"], canvas {
+    transition: opacity 0.2s linear;
+}
