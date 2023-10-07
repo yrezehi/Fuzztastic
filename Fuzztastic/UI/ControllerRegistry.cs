@@ -1,4 +1,6 @@
 ﻿
+using UI.HTML;
+
 namespace UI
 {
     public static class ControllerRegistry
