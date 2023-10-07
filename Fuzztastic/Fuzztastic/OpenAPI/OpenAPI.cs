@@ -23,5 +23,8 @@
 
         private static bool IsValidFileLocation(string fileLocation) =>
             File.Exists(fileLocation);
+
+        public override string ToString() =>
+            Loader.Instance(Location, Version).Load();
     }
 }
