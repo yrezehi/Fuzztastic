@@ -6,4 +6,4 @@
   <br>
 </h1>
 
-<h4 align="center">Cause I'm bored and looking for the perfect fuzzer'.</h4>
+<h4 align="center">Cause I'm bored</h4>
