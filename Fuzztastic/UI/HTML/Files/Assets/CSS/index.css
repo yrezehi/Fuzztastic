@@ -5,9 +5,11 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #dadada
+    background: #040405;
 }
 
 canvas {
-    opacity: 1
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
 }
