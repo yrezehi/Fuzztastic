@@ -9,7 +9,7 @@
 
         public OpenAPI(string location, int version)
         {
-            if (IsValidFileLocation(location))
+            if (!IsViaNetwork && IsValidFileLocation(location))
                 throw new ArgumentException("OpenAPI file was not found!");
 
             if (!IsHandledVersion(version))
