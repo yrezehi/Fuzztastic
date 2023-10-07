@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Expermintal\specification.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Expermintal\specification.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.9" />
   </ItemGroup>
 

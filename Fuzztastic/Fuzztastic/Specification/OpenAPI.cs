@@ -1,4 +1,4 @@
-﻿namespace Fuzztastic.OpenAPI
+﻿namespace Fuzztastic.Specification
 {
     public class OpenAPI
     {
@@ -9,7 +9,7 @@
 
         public OpenAPI(string location, int version)
         {
-            if (!IsViaNetwork && IsValidFileLocation(location))
+            if (!IsViaNetwork && !IsValidFileLocation(location))
                 throw new ArgumentException("OpenAPI file was not found!");
 
             if (!IsHandledVersion(version))
@@ -22,7 +22,7 @@
             new int[] { 2, 3 }.Contains(version);
 
         private static bool IsValidFileLocation(string fileLocation) =>
-            File.Exists(fileLocation);
+            new FileInfo(fileLocation).Exists;
 
         public override string ToString() =>
             Loader.Instance(Location, Version).Load();
