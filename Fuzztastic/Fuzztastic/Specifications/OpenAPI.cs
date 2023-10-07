@@ -5,11 +5,13 @@ namespace Fuzztastic.Specifications
     public class OpenAPI
     {
         private OpenApiDocument Specification { get; set; }
+        private Loader OpenAPILoader { get; set; }
 
         private readonly string Location;
         private readonly int Version;
         // Working on the fetching via network later!
         private bool IsViaNetwork { get; set; } = false;
+
 
         public OpenAPI(string location, int version)
         {
@@ -19,9 +21,9 @@ namespace Fuzztastic.Specifications
             if (!IsHandledVersion(version))
                 throw new ArgumentException("Invalid OpenAPI version!");
 
-            var specification = Loader.Instance(location, Version).GetSpecification();
+            OpenAPILoader = Loader.Instance(location, Version);
 
-            (Location, Version, Specification) = (location, version, specification);
+            (Location, Version, Specification) = (location, version, OpenAPILoader.GetSpecification());
         }
 
         private static bool IsHandledVersion(int version) =>
