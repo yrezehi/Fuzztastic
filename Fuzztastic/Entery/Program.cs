@@ -21,9 +21,18 @@ if (isNewComer.Equals("Yes!"))
     ");
 }
 
-var openAPILocation = Prompt.Input<string>("Enter OpenAPI file location:");
+var openAPILocation = "";
 
-if (!OpenAPI.Exists(openAPILocation))
+while (true)
 {
-    Console.WriteLine($"Open couldn't be found at location: {openAPILocation}");
+    openAPILocation = Prompt.Input<string>("Enter OpenAPI file location:");
+
+    if (OpenAPI.Exists(openAPILocation))
+    {
+        break;
+    }
+
+    Console.WriteLine($"OpenAPI file couldn't be found at location: {openAPILocation}");
 }
+
+Console.WriteLine($"OpenAPI file was found at location: {openAPILocation}");
