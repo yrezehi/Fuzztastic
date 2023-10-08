@@ -1,13 +1,19 @@
 
-document.addEventListener("DOMContentLoaded", function() {
-	function toggleContent(){
-		[
-			document.querySelector("div[data-type=\"header-content\"]"),
-			document.querySelector("canvas")
-		].forEach((element, index) => {
+document.addEventListener("DOMContentLoaded", function () {
+	setTimeout(() => {
+		(function toggleContent() {
+			[
+				document.querySelector("div[data-type=\"header-content\"]"),
+				document.querySelector("canvas")
+			].forEach((element, index) => {
+				setTimeout(() => {
+					element.style.opacity = "0";
+				}, index * 1000);
+			});
 			setTimeout(() => {
-				element.style.opacity = "0";
-			}, index * 1000);
-		});
-	}
+				var mainContentElement = document.querySelector("div[data-type=\"main-content\"]");
+				mainContentElement.style.opacity = "1";
+			}, 2000);
+		})();
+	}, 1000);
 });

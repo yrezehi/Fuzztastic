@@ -4,12 +4,9 @@ namespace Fuzztastic.Workers.Workload
 {
     public class WorkloadGenerator
     {
-        public WorkloadGenerator() { }
-
         public static List<Workload> Generate(OpenApiDocument specification)
         {
             List<Workload> workloads = new List<Workload>();
-
             foreach (var path in specification.Paths){
                 var operations = path.Value.Operations;
 
@@ -25,17 +22,14 @@ namespace Fuzztastic.Workers.Workload
                         {
                             workload.WithBody(operation.RequestBody.Content.Keys.FirstOrDefault()!);
                         }
-
-                        foreach (var server in operation.Servers)
+                     
+                        foreach (var server in (operation.Servers.Count > 0 ? operation.Servers : specification.Servers))
                         {
-                            workloads.Add(
-                                workload.WithServer(server.Url).WithEndpoint(path.Key)
-                            );
+                            workload.WithServer(server.Url);
                         }
                     }
                 }
             }
-
             return workloads;
         }
     }
