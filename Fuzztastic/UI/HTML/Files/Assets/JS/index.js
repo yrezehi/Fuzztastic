@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			setTimeout(() => {
 				var mainContentElement = document.querySelector("div[data-type=\"main-content\"]");
 				mainContentElement.style.opacity = "1";
+
+				[
+					document.querySelector("div[data-type=\"header-content\"]"),
+					document.querySelector("canvas")
+				].forEach(elementToDestory => {
+					elementToDestory.remove();
+				});
 			}, 2000);
 		})();
 	}, 1000);
