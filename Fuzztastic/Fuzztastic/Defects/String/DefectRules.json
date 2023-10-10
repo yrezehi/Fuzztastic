@@ -1,0 +1,10 @@
+﻿{
+  "rules": [
+    {
+      "action": "SET",
+      "value": "null",
+      "type": "string",
+      "descriptions": "Set null value"
+    },
+  ]
+}

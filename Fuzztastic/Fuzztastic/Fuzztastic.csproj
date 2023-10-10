@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Defects\Array\DefectRules.json" />
+    <None Remove="Defects\Numbers\DefectRules.json" />
+    <None Remove="Defects\String\DefectRules.json" />
     <None Remove="Expermintal\specification.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Defects\Array\DefectRules.json" />
+    <Compile Include="Defects\Numbers\DefectRules.json" />
+    <Compile Include="Defects\String\DefectRules.json" />
   </ItemGroup>
 
   <ItemGroup>
