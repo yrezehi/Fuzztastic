@@ -1,0 +1,22 @@
+﻿{
+  "rules": [
+    {
+      "action": "SET",
+      "value": "null",
+      "type": "array",
+      "descriptions": "Set value null"
+    },
+    {
+      "action": "SET",
+      "value": "[]",
+      "type": "array",
+      "descriptions": "Set empty array"
+    },
+    {
+      "action": "RANDOMIZE",
+      "value": "[]",
+      "type": "array",
+      "descriptions": "Set random array"
+    }
+  ]
+}
