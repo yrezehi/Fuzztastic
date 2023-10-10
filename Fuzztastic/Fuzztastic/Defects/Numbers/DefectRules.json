@@ -1,0 +1,19 @@
+﻿{
+    "rules": [
+        {
+            "action": "SET",
+            "value": "-1",
+            "type": "int"
+        },
+        {
+            "action": "SET",
+            "value": "0",
+            "type": "int"
+        },
+        {
+            "action": "SET",
+            "value": "1",
+            "type": "int"
+        }
+    ]
+}

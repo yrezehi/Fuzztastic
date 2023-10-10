@@ -13,7 +13,5 @@ namespace Fuzztastic.Specifications
 
         public OpenAPIHandler(OpenApiDocument specification) =>
             Specification = specification;
-
-
     }
 }
