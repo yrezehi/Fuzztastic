@@ -13,11 +13,11 @@
 
 <body>
 
-    <div data-type="header-content" class="absolute transition-opacity duration-[0.2s] ease-linear text-[16rem] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <!--<div data-type="header-content" class="absolute transition-opacity duration-[0.2s] ease-linear text-[16rem] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         Fuzztastic
-    </div>
+    </div>-->
 
-    <div data-type="main-content" class="absolute bg-[#F2F2F2] opacity-0 h-screen w-screen opacity transition-opacity duration-[0.2s] ease-linear">
+    <div data-type="main-content" class="absolute bg-[#F2F2F2] opacity-1 h-screen w-screen opacity transition-opacity duration-[0.2s] ease-linear">
         <div class="bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-600 h-screen flex overflow-hidden text-sm">
             <div class="bg-white dark:bg-gray-900 dark:border-gray-800 w-20 flex-shrink-0 border-r border-gray-200 flex-col hidden sm:flex">
                 <div class="h-16 text-blue-500 flex items-center justify-center">
@@ -30,12 +30,6 @@
                         <svg viewBox="0 0 24 24" class="h-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                    </button>
-                    <button class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" class="h-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
                     </button>
                     <button class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center">
@@ -72,7 +66,7 @@
                 </div>
                 <div class="flex-grow flex overflow-x-hidden">
                     <div class="xl:w-72 w-48 flex-shrink-0 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto lg:block hidden p-5">
-                        <div class="text-xs text-gray-400 tracking-wider">Collections</div>
+                        <div class="text-xs text-gray-400 tracking-wider mb-3">Collections</div>
                         <div class="relative mt-2">
                             <input type="text" class="pl-8 h-9 bg-transparent border border-gray-300 dark:border-gray-700 dark:text-white w-full rounded-md text-sm" placeholder="Search" />
                             <svg viewBox="0 0 24 24" class="w-4 absolute text-gray-400 top-1/2 transform translate-x-0.5 -translate-y-1/2 left-2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -83,12 +77,14 @@
                         <div class="space-y-4 mt-3">
                             <button class="bg-white p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow-lg relative ring-2 ring-blue-500 focus:outline-none">
                                 <div class="flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full">
-                                    <img src="https://assets.codepen.io/344846/internal/avatars/users/default.png?fit=crop&format=auto&height=512&version=1582611188&width=512" class="w-7 h-7 mr-2 rounded-full" alt="profile" />
-                                    Mert Cukuren
+                                    <svg class="w-7 h-7 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 14 3-3m-3 3 3 3m-3-3h16v-3m2-7-3 3m3-3-3-3m3 3H3v3" />
+                                    </svg>
+                                    Local SSF Service
                                 </div>
                                 <div class="flex items-center w-full">
-                                    <div class="text-xs py-1 px-2 leading-none dark:bg-gray-900 bg-green-100 text-green-600 rounded-md">Sales</div>
-                                    <div class="ml-auto text-xs text-gray-500">$2,794.00</div>
+                                    <div class="text-xs py-1 px-2 leading-none dark:bg-gray-900 bg-green-100 text-green-600 rounded-md">In-Progress</div>
+                                    <div class="ml-auto text-xs text-gray-500">5/352</div>
                                 </div>
                             </button>
                         </div>
@@ -100,7 +96,7 @@
                                     <svg class="w-12 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 14 3-3m-3 3 3 3m-3-3h16v-3m2-7-3 3m3-3-3-3m3 3H3v3" />
                                     </svg>
-                                    Mert Cukuren
+                                    Local SSF Service
                                 </div>
                                 <div class="ml-auto sm:flex hidden items-center justify-end">
                                     <div class="text-right">
@@ -117,8 +113,8 @@
                                 </div>
                             </div>
                             <div class="flex items-center space-x-3 sm:mt-7 mt-4">
-                                <a href="#" class="px-3 border-b-2 border-blue-500 text-blue-500 dark:text-white dark:border-white pb-1.5">Activities</a>
-                                <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5">Transfer</a>
+                                <a href="#" class="px-3 border-b-2 border-blue-500 text-blue-500 dark:text-white dark:border-white pb-1.5">History</a>
+                                <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5">Failures</a>
                                 <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden">Budgets</a>
                                 <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden">Notifications</a>
                                 <a href="#" class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5 sm:block hidden">Cards</a>
@@ -161,32 +157,28 @@
                             <table class="w-full text-left">
                                 <thead>
                                     <tr class="text-gray-400">
-                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Type</th>
-                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Where</th>
-                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800 hidden md:table-cell">Description</th>
-                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Amount</th>
-                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800 sm:text-gray-400 text-white">Date</th>
+                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Request</th>
+                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Description</th>
+                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800 hidden md:table-cell">Status</th>
+                                        <th class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">Time</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 dark:text-gray-100">
                                     <tr>
                                         <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
                                             <div class="flex items-center">
-                                                <svg viewBox="0 0 24 24" class="w-4 mr-5 text-green-500" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                    <polyline points="19 12 12 19 5 12"></polyline>
-                                                </svg>
-                                                Income
+                                                <span class="w-4 mr-5 text-green-500">
+                                                    GET
+                                                </span>
+                                                Get/Users/{id}
                                             </div>
                                         </td>
                                         <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
                                             <div class="flex items-center">
-                                                <img class="w-7 h-7 mr-2.5 border border-gray-200 dark:border-gray-800 rounded-full" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ" alt="profile" />
-                                                Jane Cooper
+                                                Overflow request
                                             </div>
                                         </td>
-                                        <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden">Invoice No: 12993</td>
-                                        <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 text-green-500">+ $24.00</td>
+                                        <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800 md:table-cell hidden text-red-500">Failed</td>
                                         <td class="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
                                             <div class="flex items-center">
                                                 <div class="sm:flex hidden flex-col">
