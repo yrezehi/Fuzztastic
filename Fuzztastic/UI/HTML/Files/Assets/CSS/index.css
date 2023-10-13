@@ -4,8 +4,15 @@
     font-display: swap;
 }
 
+@font-face {
+    src: url('../Fonts/SundayLemon.otf');
+    src: url('../fonts/SundayLemon.ttf') format('truetype');
+    font-family: 'SundayLemon';
+    font-display: swap;
+}
+
 * {
-    font-family: 'Armour';
+    font-family: 'SundayLemon';
     line-height: normal !important;
 }
 
@@ -24,4 +31,8 @@ canvas {
     width: 100vw !important;
     transition: opacity 0.2s linear;
     position: absolute;
+}
+
+[data-type="header-content"] {
+    font-family: 'Armour';
 }
