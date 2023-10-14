@@ -1,11 +1,14 @@
-﻿namespace Fuzztastic.Http
+﻿using Newtonsoft.Json;
+using System.Text;
+
+namespace Fuzztastic.Http
 {
     public class HttpClientBuilder
     {
         private HttpClient HttpClient { get; set; }
         private string HttpMethod { get; set; }
         private string URL { get; set; }
-        private string Body { get; set; }
+        private StringContent Body { get; set; }
 
         public static HttpClientBuilder Create() =>
             new HttpClientBuilder();
@@ -22,27 +25,29 @@
             return this;
         }
 
-        public HttpClientBuilder WithBody(string body)
+        public HttpClientBuilder WithBody(object body)
         {
-            Body = body;
+            Body = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
+
             return this;
         }
 
-        public HttpResponseMessage Execute()
+        public async Task<HttpResponseMessage> Execute()
         {
             HttpClient = new HttpClient();
 
             return HttpMethod switch
             {
-                "GET" => GetRequest(),
+                "GET" => await GetRequest(),
                 _ => throw new ArgumentException($"No HTTP Method found for {HttpMethod}")
             };
         }
 
-        private HttpResponseMessage GetRequest()
-            {
-                return null;
-            }
+        private async Task<HttpResponseMessage> GetRequest() =>
+            await HttpClient.GetAsync(URL);
+        
+        private async Task<HttpResponseMessage> PostReqiest() => 
+            await HttpClient
 
     }
 }

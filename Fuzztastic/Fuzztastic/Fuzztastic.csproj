@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Polly" Version="8.0.0" />
   </ItemGroup>
 
