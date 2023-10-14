@@ -41,18 +41,18 @@ namespace Fuzztastic.Http
                 "GET" => await GetRequest(),
                 "POST" => await PostRequest(), 
                 "PUT" => await PutRequest(),
-             
+                "DELETE" => await DeleteRequest(),
                 _ => throw new ArgumentException($"No HTTP Method found for {HttpMethod}")
             };
         }
 
         private async Task<HttpResponseMessage> GetRequest() =>
             await HttpClient.GetAsync(URL);
-        
         private async Task<HttpResponseMessage> PostRequest() => 
             await HttpClient.PostAsync(URL, Body);
-
         private async Task<HttpResponseMessage> PutRequest() =>
             await HttpClient.PutAsync(URL, Body);
+        private async Task<HttpResponseMessage> DeleteRequest() =>
+            await HttpClient.DeleteAsync(URL);
     }
 }
