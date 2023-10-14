@@ -2,7 +2,6 @@
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
-using System.IO;
 
 namespace Fuzztastic.Specifications
 {

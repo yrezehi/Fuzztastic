@@ -1,6 +1,5 @@
 ﻿using Polly;
 using Polly.Retry;
-using System;
 
 namespace Fuzztastic.Http
 {
