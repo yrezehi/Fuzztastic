@@ -39,6 +39,9 @@ namespace Fuzztastic.Http
             return HttpMethod switch
             {
                 "GET" => await GetRequest(),
+                "POST" => await PostRequest(), 
+                "PUT" => await PutRequest(),
+             
                 _ => throw new ArgumentException($"No HTTP Method found for {HttpMethod}")
             };
         }
@@ -46,8 +49,10 @@ namespace Fuzztastic.Http
         private async Task<HttpResponseMessage> GetRequest() =>
             await HttpClient.GetAsync(URL);
         
-        private async Task<HttpResponseMessage> PostReqiest() => 
-            await HttpClient
+        private async Task<HttpResponseMessage> PostRequest() => 
+            await HttpClient.PostAsync(URL, Body);
 
+        private async Task<HttpResponseMessage> PutRequest() =>
+            await HttpClient.PutAsync(URL, Body);
     }
 }
