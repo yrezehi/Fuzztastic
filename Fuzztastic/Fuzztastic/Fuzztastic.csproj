@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Defects\Array\DefectRules.json" />
-    <Compile Include="Defects\Numbers\DefectRules.json" />
-    <Compile Include="Defects\String\DefectRules.json" />
+    <Resource Include="Defects\Array\DefectRules.json" />
+    <Resource Include="Defects\Numbers\DefectRules.json" />
+    <Resource Include="Defects\String\DefectRules.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.9" />
+    <PackageReference Include="Polly" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

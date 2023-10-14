@@ -1,52 +1,52 @@
 ﻿{
-    "rules": [
-        {
-            "action": "SET",
-            "value": "-1",
-            "type": "int",
-            "descriptions": "Set value -1"
-        },
-        {
-            "action": "SET",
-            "value": "0",
-            "type": "int",
-            "descriptions": "Set value 0"
-        },
-        {
-            "action": "SET",
-            "value": "1",
-            "type": "int",
-            "descriptions": "Set value 1"
-        },
-        {
-            "action": "SET",
-            "value": "2147483647",
-            "type": "int",
-            "descriptions": "Set maximum value"
-        },
-        {
-            "action": "SET",
-            "value": "-2147483648",
-            "type": "int",
-            "descriptions": "Set minimum value"
-        },
-        {
-            "action": "SET",
-            "value": "2147483648",
-            "type": "int",
-            "descriptions": "Set overflow maximum value"
-        },
-        {
-          "action": "SET",
-          "value": "-2147483649",
-          "type": "int",
-          "descriptions": "Set overflow minimum value"
-        },
-        {
-          "action": "SET",
-          "value": "null",
-          "type": "int",
-          "descriptions": "Set null value"
-        }
-    ]
+  "rules": [
+    {
+      "action": "SET",
+      "value": "-1",
+      "type": "int",
+      "descriptions": "Set value -1"
+    },
+    {
+      "action": "SET",
+      "value": "0",
+      "type": "int",
+      "descriptions": "Set value 0"
+    },
+    {
+      "action": "SET",
+      "value": "1",
+      "type": "int",
+      "descriptions": "Set value 1"
+    },
+    {
+      "action": "SET",
+      "value": "2147483647",
+      "type": "int",
+      "descriptions": "Set maximum value"
+    },
+    {
+      "action": "SET",
+      "value": "-2147483648",
+      "type": "int",
+      "descriptions": "Set minimum value"
+    },
+    {
+      "action": "SET",
+      "value": "2147483648",
+      "type": "int",
+      "descriptions": "Set overflow maximum value"
+    },
+    {
+      "action": "SET",
+      "value": "-2147483649",
+      "type": "int",
+      "descriptions": "Set overflow minimum value"
+    },
+    {
+      "action": "SET",
+      "value": "null",
+      "type": "int",
+      "descriptions": "Set null value"
+    }
+  ]
 }
