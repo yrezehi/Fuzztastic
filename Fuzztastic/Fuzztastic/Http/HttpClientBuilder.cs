@@ -2,8 +2,7 @@
 {
     public class HttpClientBuilder
     {
-        private HttpClient HttpClient;
-
+        private HttpClient HttpClient { get; set; }
         private string HttpMethod { get; set; }
         private string URL { get; set; }
         private string Body { get; set; }
@@ -28,6 +27,22 @@
             Body = body;
             return this;
         }
+
+        public HttpResponseMessage Execute()
+        {
+            HttpClient = new HttpClient();
+
+            return HttpMethod switch
+            {
+                "GET" => GetRequest(),
+                _ => throw new ArgumentException($"No HTTP Method found for {HttpMethod}")
+            };
+        }
+
+        private HttpResponseMessage GetRequest()
+            {
+                return null;
+            }
 
     }
 }
