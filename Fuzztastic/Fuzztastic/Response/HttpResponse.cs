@@ -5,8 +5,8 @@
         private readonly int StatusCode;
         private string? Description { get; set; }
 
-        public HttpResponse(int statusCode) =>
-            StatusCode = statusCode;
+        public HttpResponse(HttpResponseMessage response) =>
+            StatusCode = (int) response.StatusCode;
 
         public bool Is1xx => IsBetween(100, 199);
         public bool Is2xx => IsBetween(200, 299);

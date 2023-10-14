@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Fuzztastic.Response;
+using Newtonsoft.Json;
 using System.Text;
 
 namespace Fuzztastic.Request
@@ -31,18 +32,18 @@ namespace Fuzztastic.Request
             return this;
         }
 
-        public async Task<HttpResponseMessage> Execute()
+        public async Task<HttpResponse> Execute()
         {
             HttpClient = new HttpClient();
 
-            return HttpMethod switch
+            return new HttpResponse(HttpMethod switch
             {
                 "GET" => await GetRequest(),
                 "POST" => await PostRequest(),
                 "PUT" => await PutRequest(),
                 "DELETE" => await DeleteRequest(),
                 _ => throw new ArgumentException($"No HTTP Method found for {HttpMethod}")
-            };
+            });
         }
 
         private async Task<HttpResponseMessage> GetRequest() =>
