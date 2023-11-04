@@ -11,13 +11,11 @@ namespace Fuzztastic.Request
         private string URL { get; set; }
         private StringContent Body { get; set; }
 
-        public static HttpRequest Create() =>
-            new HttpRequest();
-
-        public HttpRequest WithHttpMethod(string method)
+        public static HttpRequest Create(string method)
         {
-            HttpMethod = method;
-            return this;
+            HttpRequest request = new HttpRequest();
+            request.HttpMethod = method.ToUpper();
+            return request;
         }
 
         public HttpRequest WithUrl(string url)
